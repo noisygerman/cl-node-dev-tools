@@ -1,0 +1,17 @@
+{
+  "name": "node-dev-tools",
+  "version": "0.0.1",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/copperleaftechnologies/cl-node-dev-tools.git"
+  },
+  "author": "Copperleaf Technologies",
+  "license": "UNLISCENSED",
+  "private": true,
+  "dependencies": {
+    "eslint": "^2.11.1",
+    "jasmine": "^2.4.1",
+    "watch": "^0.18.0"
+  }
+}
