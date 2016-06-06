@@ -1,7 +1,8 @@
 {
   "env": {
     "es6": true,
-    "node": true
+    "node": true,
+    "jasmine": true
   },
   "extends": "eslint:recommended",
   "rules": {
@@ -41,7 +42,6 @@
     "padded-blocks":                 [ "error", "always" ],
     "quote-props":                   [ "error", "as-needed" ],
     "semi-spacing":                    "error",
-    "space-before-blocks":           [ "error", "never" ],
     "space-before-function-paren":   [ "error", "never" ],
     "space-in-parens":               [ "error", "always", {"exceptions": ["empty"]} ],
     "space-infix-ops":               [ "error", {"int32Hint": false} ],
@@ -73,7 +73,7 @@
     "object-shorthand":              [ "error", "always" ],
     "prefer-arrow-callback":         [ "error", { "allowUnboundThis": false } ],
     "prefer-const":                    "error",
-    "prefer-reflect":                [ "error", { "exceptions": ["apply", "call"] } ],
+    "prefer-reflect":                [ "error", { "exceptions": ["apply", "call", "delete"] } ],
     "prefer-rest-params":              "error",
     "prefer-spread":                   "error",
     "prefer-template":                 "error",
