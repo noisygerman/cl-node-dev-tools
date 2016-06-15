@@ -23,8 +23,11 @@ module.exports = function startTddWatchLoop(){
       monitor.removeListener( 'removed', onChanged );
       monitor.removeListener( 'created', onChanged );
 
+      const root =
+        require( 'path').relative( process.cwd(), __dirname) || '.';
+
       require( 'child_process' )
-        .fork( './utils/lint-and-test.js' )
+        .fork( `${ root }/lint-and-test.js` )
         .on( 'close', ()=> {
 
           monitor.on( 'changed', onChanged );
