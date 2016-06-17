@@ -47,6 +47,7 @@
     "padded-blocks":                 [ "error", "always" ],
     "quote-props":                   [ "error", "as-needed" ],
     "semi-spacing":                    "error",
+    "space-before-blocks":           [ "error", "never" ],
     "space-before-function-paren":   [ "error", "never" ],
     "space-in-parens":               [ "error", "always", {"exceptions": ["empty"]} ],
     "space-infix-ops":               [ "error", {"int32Hint": false} ],
@@ -68,7 +69,7 @@
 
     "arrow-body-style":              [ "error", "as-needed" ],
     "arrow-parens":                  [ "error", "always" ],
-    "arrow-spacing":                 [ "error", { "before": false, "after": true }],
+    "arrow-spacing":                 [ "error", { "before": false, "after": false }],
     "no-class-assign":                 "error",
     "no-confusing-arrow":            [ "error", { "allowParens": false } ],
     "no-useless-computed-key":         "error",
