@@ -2,7 +2,7 @@ module.exports = function startTddWatchLoop(){
 
   function byPathFilter(){
 
-    const regx = /^(spec|lib)[^$.]*($|\.js$)/;
+    const regx = /^(spec|lib|server)[^$.]*($|\.js$|\.json$)/;
 
     return regx.test.bind( regx );
 
@@ -23,8 +23,11 @@ module.exports = function startTddWatchLoop(){
       monitor.removeListener( 'removed', onChanged );
       monitor.removeListener( 'created', onChanged );
 
+      const root =
+        require( 'path').relative( process.cwd(), __dirname) || '.';
+
       require( 'child_process' )
-        .fork( './utils/lint-and-test.js' )
+        .fork( `${ root }/lint-and-test.js` )
         .on( 'close', ()=> {
 
           monitor.on( 'changed', onChanged );
@@ -35,7 +38,9 @@ module.exports = function startTddWatchLoop(){
 
     }
 
-    monitor.once( 'changed', onChanged );
+    monitor.on( 'changed', onChanged );
+    monitor.on( 'removed', onChanged );
+    monitor.on( 'created', onChanged );
 
   } );
 
