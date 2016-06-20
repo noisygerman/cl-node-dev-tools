@@ -11,7 +11,7 @@ module.exports = ( server )=>{
 
       if( err ) reject( err );
 
-      resolve();
+      resolve( server );
 
     } );
 
