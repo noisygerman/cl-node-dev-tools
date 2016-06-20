@@ -12,6 +12,7 @@
   "dependencies": {
     "eslint": "^2.11.1",
     "jasmine": "^2.4.1",
+    "loopback-boot": "^2.18.1",
     "watch": "^0.18.0"
   }
 }

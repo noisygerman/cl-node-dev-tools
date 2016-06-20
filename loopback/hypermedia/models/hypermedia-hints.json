@@ -1,0 +1,35 @@
+{
+  "name": "HypermediaHints",
+  "base": "Model",
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "hidden": [
+    "id"
+  ],
+  "properties": {
+    "allow": {
+      "type": [
+        "string"
+      ],
+      "required": true,
+      "default": [
+        "see https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html"
+      ]
+    },
+    "formats": {
+      "type": [
+        "string"
+      ],
+      "required": true,
+      "default": [
+        "application/json"
+      ]
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
