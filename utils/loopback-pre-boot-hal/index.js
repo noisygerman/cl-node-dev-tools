@@ -1,6 +1,6 @@
 module.exports = ( server )=>{
 
-  return new Promise( ( resolve, reject )=>{
+  return ( ( resolve, reject )=>{
 
     const Hypermedia = require( './utils/hypermedia' );
     const boot       = require( 'loopback-boot' );
