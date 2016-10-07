@@ -1,4 +1,4 @@
-( ()=> {
+( ()=>{
 
   const runTests = require( './run-tests' )();
 

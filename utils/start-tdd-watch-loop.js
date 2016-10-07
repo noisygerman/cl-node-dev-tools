@@ -15,7 +15,7 @@ module.exports = function startTddWatchLoop(){
     ignoreNotPermitted:  true
   };
 
-  require( 'watch' ).createMonitor( './', watchOptions, ( monitor )=> {
+  require( 'watch' ).createMonitor( './', watchOptions, ( monitor )=>{
 
     function onChanged(){
 
@@ -23,12 +23,12 @@ module.exports = function startTddWatchLoop(){
       monitor.removeListener( 'removed', onChanged );
       monitor.removeListener( 'created', onChanged );
 
-      const root =
-        require( 'path').relative( process.cwd(), __dirname) || '.';
+      const root
+        = require( 'path' ).relative( process.cwd(), __dirname ) || '.';
 
       require( 'child_process' )
         .fork( `${ root }/lint-and-test.js` )
-        .on( 'close', ()=> {
+        .on( 'close', ()=>{
 
           monitor.on( 'changed', onChanged );
           monitor.on( 'removed', onChanged );
