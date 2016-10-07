@@ -4,7 +4,8 @@
     "**/*-spec.js"
   ],
   "helpers": [
-    "helpers/**/*.js"
+    "helpers/**/*.js",
+    "common-helpers/**/*.js"
   ],
   "stopSpecOnExpectationFailure": false,
   "stopOnFailure": false,

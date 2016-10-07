@@ -6,6 +6,12 @@
     "type": "git",
     "url": "git+ssh://git@bitbucket.org/copperleaftechnologies/cl-node-dev-tools.git"
   },
+  "scripts": {
+    "start": "npm test",
+    "pretest": "eslint --fix .",
+    "test": "node$NODE_DEBUG_OPTION run-tests.js",
+    "tdd": "node$NODE_DEBUG_OPTION run-tests.js continuously"
+  },
   "author": "Copperleaf Technologies",
   "license": "UNLISCENSED",
   "private": true,
