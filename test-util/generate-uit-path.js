@@ -16,20 +16,24 @@ const rootPath
  **/
 function generateUITPath( specPath ){
 
+  const specDirPath
+    = path.dirname( specPath );
+
   const relativeToRoot
-    = path.relative( rootPath, specPath );
+    = path.relative( rootPath, specDirPath );
 
   const rootRelativeToSpec
-    = path.relative( specPath, rootPath );
+    = path.relative( specDirPath, rootPath );
 
   const basename
     = path.basename( specPath, '-spec.js' );
 
+  // end of 'spec/'
   const specDirEnd
     = relativeToRoot.indexOf( path.sep ) + 1;
 
   const uitDirname
-    = path.dirname( relativeToRoot.substring( specDirEnd ) );
+    = relativeToRoot.substring( specDirEnd );
 
   return path.join( rootRelativeToSpec, uitDirname, `${ basename }.js` );
 

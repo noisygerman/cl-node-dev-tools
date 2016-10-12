@@ -10,7 +10,7 @@ const testUtils = {
   //     = process.cl_test_util.generateUITPath( __filename );
   //
   // See spec/test-util/generate-uit-path.js for more info
-  generateUITPath: require( '../test-util/generate-uit-path' )
+  generateUITPath: require( '../../test-util/generate-uit-path' )
 
 };
 

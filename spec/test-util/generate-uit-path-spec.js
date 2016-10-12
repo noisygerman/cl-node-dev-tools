@@ -4,12 +4,12 @@ describe( 'The generateUITPath function', ()=>{
    = require( 'path' );
 
   const generateUITPath
-    = process.cl_test_util.generateUITPath;
+    = require( process.cl_test_util.generateUITPath( __filename ) );
 
   it( 'should generate a path relative to the file path provded', ()=>{
 
     const expected
-      = path.join( '..', '..', '..', 'helpers-spec', 'generate-uit-path.js' );
+      = path.join( '..', '..', 'test-util', 'generate-uit-path.js' );
 
     expect( generateUITPath( __filename ) )
       .toEqual( expected );
