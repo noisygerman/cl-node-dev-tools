@@ -4,7 +4,7 @@
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/copperleaftechnologies/cl-node-dev-tools.git"
+    "url": "git+ssh://git@github.com:copperleaftech/cl-node-dev-tools.git"
   },
   "scripts": {
     "start": "npm test",
