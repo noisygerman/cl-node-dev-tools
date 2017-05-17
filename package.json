@@ -9,12 +9,11 @@
   "scripts": {
     "start": "npm test",
     "pretest": "eslint --fix .",
-    "test": "node$NODE_DEBUG_OPTION run-tests.js",
-    "tdd": "node$NODE_DEBUG_OPTION run-tests.js continuously"
+    "test": "node $NODE_DEBUG_OPTION run-tests.js",
+    "tdd": "node $NODE_DEBUG_OPTION run-tests.js continuously"
   },
   "author": "Copperleaf Technologies",
-  "license": "UNLISCENSED",
-  "private": true,
+  "license": "MIT",
   "dependencies": {
     "eslint": "^2.11.1",
     "jasmine": "^2.4.1",
