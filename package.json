@@ -1,10 +1,10 @@
 {
-  "name": "noisy-node-dev-tools",
-  "version": "1.0.3",
+  "name": "noisy-jasmine",
+  "version": "1.0.0",
   "description": "Tools to make Jasmine testing in Node a little easier",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:noisygerman/noisy-node-dev-tools.git"
+    "url": "git+ssh://git@github.com:noisygerman/noisy-jasmine.git"
   },
   "scripts": {
     "start": "npm test",
