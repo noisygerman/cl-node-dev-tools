@@ -1,7 +1,7 @@
 {
-  "name": "cl-node-dev-tools",
-  "version": "0.0.1",
-  "description": "",
+  "name": "noisy-node-dev-tools",
+  "version": "1.0.1",
+  "description": "Tools to make Jasmine testing in Node a little easier",
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com:noisygerman/noisy-node-dev-tools.git"
