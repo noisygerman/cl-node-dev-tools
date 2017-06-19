@@ -2,6 +2,8 @@
 
 Implements jasmine pre-configurations and test runner tools.
 
+[ ![Codeship Status for noisygerman/noisy-node-dev-tools](https://app.codeship.com/projects/d1fd2930-36ea-0135-3056-466529bde11a/status?branch=master)](https://app.codeship.com/projects/227267)
+
 ## `run-tests.js`
 Executing `./run-tests.js` will:
 
