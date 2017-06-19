@@ -9,10 +9,9 @@ Executing `./run-tests.js` will:
 2. execute all tests, regardless if errors where detectd during linting.
 
 While I very much appreciate tools like eslint, I usually want to see if my code
-exeucte correctly first and have the choice to ignore linting issues, while
-still being aware of any linting issues currently present. using the test runner,
-i get a report on issues, but unlike with `"pretest": "eslint ."`, the tests
-can still execute.
+execute correctly first and have the choice to defer fixing linting issues.
+Using `./run-tests.js`, we get a report on issues, but unlike
+`"pretest": "eslint ."`, the tests will still execute.
 
 ### tdd
 `./run-tests.js` supports a _continous run_ mode. In this mode, the test runner
