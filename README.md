@@ -1,4 +1,4 @@
-# noisy-node-dev-tools
+# noisy-jasmine
 
 Implements jasmine pre-configurations and test runner tools.
 
