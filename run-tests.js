@@ -1,17 +1,15 @@
 if ( require.main === module ){
 
-  if( process.argv[ 2 ] === 'continuously' ){
+  const onInitialTestsRun = process.argv[ 2 ] === 'continuously'
+    ? require( './utils/start-tdd-watch-loop' )
+    : ()=>()=>null; // no-op - run tests just once
 
-    const root = require( 'path' ).relative( process.cwd(), __dirname ) || '.';
+  const root
+    = require( 'path' ).relative( process.cwd(), __dirname ) || '.';
 
-    require( 'child_process' ).fork( `${ root }/utils/lint-and-test.js` )
-      .on( 'close', require( './utils/start-tdd-watch-loop' ) );
-
-  } else {
-
-    require( './utils/run-tests' )()();
-
-  }
+  require( 'child_process' )
+    .fork( `${ root }/utils/lint-and-test.js` )
+    .on( 'close', onInitialTestsRun() );
 
 } else {
 

@@ -15,33 +15,38 @@ module.exports = function startTddWatchLoop(){
     ignoreNotPermitted:  true
   };
 
-  require( 'watch' ).createMonitor( './', watchOptions, ( monitor )=>{
+  return ()=>{
 
-    function onChanged(){
+    require( 'watch' ).createMonitor( './', watchOptions, ( monitor )=>{
 
-      monitor.removeListener( 'changed', onChanged );
-      monitor.removeListener( 'removed', onChanged );
-      monitor.removeListener( 'created', onChanged );
+      function onChanged(){
 
-      const root
-        = require( 'path' ).relative( process.cwd(), __dirname ) || '.';
+        monitor.removeListener( 'changed', onChanged );
+        monitor.removeListener( 'removed', onChanged );
+        monitor.removeListener( 'created', onChanged );
 
-      require( 'child_process' )
-        .fork( `${ root }/lint-and-test.js` )
-        .on( 'close', ()=>{
+        const root
+          = require( 'path' ).relative( process.cwd(), __dirname ) || '.';
 
-          monitor.on( 'changed', onChanged );
-          monitor.on( 'removed', onChanged );
-          monitor.on( 'created', onChanged );
+        require( 'child_process' )
+          .fork( `${ root }/lint-and-test.js` )
+          .on( 'close', ()=>{
 
-        } );
+            monitor.on( 'changed', onChanged );
+            monitor.on( 'removed', onChanged );
+            monitor.on( 'created', onChanged );
 
-    }
+          } );
 
-    monitor.on( 'changed', onChanged );
-    monitor.on( 'removed', onChanged );
-    monitor.on( 'created', onChanged );
+      }
 
-  } );
+      monitor.on( 'changed', onChanged );
+      monitor.on( 'removed', onChanged );
+      monitor.on( 'created', onChanged );
+
+    } );
+
+  };
 
 };
+

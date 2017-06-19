@@ -4,20 +4,21 @@
   "description": "",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:copperleaftech/cl-node-dev-tools.git"
+    "url": "git+ssh://git@github.com:noisygerman/noisy-node-dev-tools.git"
   },
   "scripts": {
     "start": "npm test",
-    "pretest": "eslint --fix .",
-    "test": "node $NODE_DEBUG_OPTION run-tests.js",
-    "tdd": "node $NODE_DEBUG_OPTION run-tests.js continuously"
+    "test": "node run-tests.js",
+    "tdd": "node run-tests.js continuously"
   },
-  "author": "Copperleaf Technologies",
+  "author": {
+    "name": "Markus Westerholz",
+    "email": "mwesterholz@gmail.com"
+  },
   "license": "MIT",
   "dependencies": {
-    "eslint": "^2.11.1",
-    "jasmine": "^2.4.1",
-    "loopback-boot": "^2.18.1",
-    "watch": "^0.18.0"
+    "eslint": "^4.0.0",
+    "jasmine": "^2.6.0",
+    "watch": "^1.0.2"
   }
 }
