@@ -1,6 +1,6 @@
 {
   "name": "noisy-node-dev-tools",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Tools to make Jasmine testing in Node a little easier",
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
     "eslint": "^4.0.0",
     "jasmine": "^2.6.0",
     "watch": "^1.0.2"
+  },
+  "engines": {
+    "node": ">=6.0.0"
   }
 }
