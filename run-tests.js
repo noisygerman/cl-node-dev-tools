@@ -1,6 +1,12 @@
 if ( require.main === module ){
 
-  const onInitialTestsRun = process.argv[ 2 ] === 'continuously'
+  const flag
+    = process.argv[ 2 ];
+
+  // execute in this process and exit
+  if( flag === 'without-linting' ) return require( './utils/run-tests' )()();
+
+  const onInitialTestsRun = flag === 'continuously'
     ? require( './utils/start-tdd-watch-loop' )
     : ()=>()=>null; // no-op - run tests just once
 

@@ -16,30 +16,41 @@ Using `./run-tests.js`, we get a report on issues, but unlike
 `"pretest": "eslint ."`, the tests will still execute.
 
 ### tdd
-`./run-tests.js` supports a _continous run_ mode. In this mode, the test runner
+
+`./run-tests.js` supports a _continuous run_ mode. In this mode, the test runner
 executes, then watches for file changes in the projects _spec_, _lib_ and
 _server_ folders.
 
 To run the tests in _continuous run_ or _tdd_ mode, run
 `node_modules/noisy-node-dev-tools/run-tests.js continuously`.
 
+### Less linting, more testing
+
+You can skip linting in `./run-tests.js` by setting the `without-linting` flag.
+With that flag set, the script will only execute the test runner.
+
+Note: Currently only the first command line argument is observed, so you cannot run
+`without_linting` and `continuously` at the same time.
+
 ### package.json
 
 ```json
 {
   "scripts": {
-    "test": "node node_modules/noisy-node-dev-tools/run-tests.js",
-    "tdd": "node --inspect node_modules/noisy-node-dev-tools/run-tests.js continuously"
+    "test":         "node node_modules/noisy-node-dev-tools/run-tests.js",
+    "test-no-lint": "node node_modules/noisy-node-dev-tools/run-tests.js without-linting",
+    "tdd":          "node --inspect node_modules/noisy-node-dev-tools/run-tests.js continuously"
 }
 ```
+
 With the above configuration, you can execute single test runs via `npm test`
 and tdd continuous runs via `npm run tdd`.
 
 The `--inspect` flag is optional of course. it simply allows you to connect a
 debugger while running your tests.
 
-
 ## `test-util/generate-uit-path.js`
+
 `test-util/generate-uit-path.js` can be used in spec files to resolve
 paths to uit source-files, if those spec files:
 
